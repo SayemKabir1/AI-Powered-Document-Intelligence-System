@@ -1,0 +1,2 @@
+Invoice Number,Invoice Date,Supplier Name,Customer Name,Subtotal,Tax,Total,Currency,Description,Quantity,Unit Price,Amount
+INV-102,2026-03-10,Dhaka Stationery,Alpha Ltd,1200.0,180.0,1380.0,BDT,Printer ink,4.0,300.0,1200.0

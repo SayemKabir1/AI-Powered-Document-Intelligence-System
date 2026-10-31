@@ -1,0 +1,12 @@
+{
+  "benchmark": "synthetic 1000-page digital PDF",
+  "page_count_reported": 1000,
+  "expected_page_count": 1000,
+  "success": true,
+  "pdf_size_bytes": 591607,
+  "extracted_text_characters": 283891,
+  "elapsed_seconds": 0.1901,
+  "pages_per_second": 5261.2,
+  "kind": "pdf",
+  "limitations": "Digital text only; does not measure OCR latency for 1000 scanned pages or concurrent jobs."
+}

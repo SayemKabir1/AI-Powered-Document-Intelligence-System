@@ -1,0 +1,2 @@
+Invoice Number,Invoice Date,Supplier Name,Customer Name,Subtotal,Tax,Total,Currency,Description,Quantity,Unit Price,Amount
+INV-103,2026-03-15,Paper & Pens Ltd,Beta Services,80.0,0.0,80.0,EUR,Notebooks,8.0,10.0,80.0

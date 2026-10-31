@@ -1,0 +1,97 @@
+[
+  {
+    "filename": "invoice_001.csv",
+    "fields": {
+      "invoice_number": "INV-100",
+      "invoice_date": "2026-01-15",
+      "supplier_name": "Northwind Traders",
+      "customer_name": "Example Client",
+      "subtotal": 100.0,
+      "tax": 15.0,
+      "total": 115.0,
+      "currency": "USD"
+    },
+    "line_item": {
+      "description": "Consulting services",
+      "quantity": 2.0,
+      "unit_price": 50.0,
+      "amount": 100.0
+    }
+  },
+  {
+    "filename": "invoice_002.csv",
+    "fields": {
+      "invoice_number": "INV-101",
+      "invoice_date": "2026-02-20",
+      "supplier_name": "Contoso Supplies",
+      "customer_name": "Example Client",
+      "subtotal": 250.0,
+      "tax": 12.5,
+      "total": 262.5,
+      "currency": "USD"
+    },
+    "line_item": {
+      "description": "Office paper",
+      "quantity": 5.0,
+      "unit_price": 50.0,
+      "amount": 250.0
+    }
+  },
+  {
+    "filename": "invoice_003.csv",
+    "fields": {
+      "invoice_number": "INV-102",
+      "invoice_date": "2026-03-10",
+      "supplier_name": "Dhaka Stationery",
+      "customer_name": "Alpha Ltd",
+      "subtotal": 1200.0,
+      "tax": 180.0,
+      "total": 1380.0,
+      "currency": "BDT"
+    },
+    "line_item": {
+      "description": "Printer ink",
+      "quantity": 4.0,
+      "unit_price": 300.0,
+      "amount": 1200.0
+    }
+  },
+  {
+    "filename": "invoice_004.csv",
+    "fields": {
+      "invoice_number": "INV-103",
+      "invoice_date": "2026-03-15",
+      "supplier_name": "Paper & Pens Ltd",
+      "customer_name": "Beta Services",
+      "subtotal": 80.0,
+      "tax": 0.0,
+      "total": 80.0,
+      "currency": "EUR"
+    },
+    "line_item": {
+      "description": "Notebooks",
+      "quantity": 8.0,
+      "unit_price": 10.0,
+      "amount": 80.0
+    }
+  },
+  {
+    "filename": "invoice_005.csv",
+    "fields": {
+      "invoice_number": "INV-104",
+      "invoice_date": "2026-04-02",
+      "supplier_name": "Acme Consulting",
+      "customer_name": "Delta Group",
+      "subtotal": 450.0,
+      "tax": 67.5,
+      "total": 517.5,
+      "currency": "GBP"
+    },
+    "line_item": {
+      "description": "Implementation support",
+      "quantity": 3.0,
+      "unit_price": 150.0,
+      "amount": 450.0
+    }
+  }
+]

@@ -1,0 +1,2 @@
+Invoice Number,Invoice Date,Supplier Name,Customer Name,Subtotal,Tax,Total,Currency,Description,Quantity,Unit Price,Amount
+INV-101,2026-02-20,Contoso Supplies,Example Client,250.0,12.5,262.5,USD,Office paper,5.0,50.0,250.0

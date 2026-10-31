@@ -1,0 +1,84 @@
+{
+  "dataset": "evaluation/ground_truth.json",
+  "dataset_size": 5,
+  "synthetic_dataset_notice": "These are generated spreadsheet examples only. Results are not representative of real-world scanned invoices or arbitrary layouts.",
+  "environment": {
+    "python": "3.13.18",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.41"
+  },
+  "document_success_rate": 1.0,
+  "document_failure_rate": 0.0,
+  "overall_field_exact_match_accuracy": 1.0,
+  "field_accuracy": {
+    "invoice_number": 1.0,
+    "invoice_date": 1.0,
+    "supplier_name": 1.0,
+    "customer_name": 1.0,
+    "subtotal": 1.0,
+    "tax": 1.0,
+    "total": 1.0,
+    "currency": 1.0
+  },
+  "line_item_examples_evaluated": 5,
+  "line_item_exact_match_rate": 1.0,
+  "validation_arithmetic_clean_rate": 1.0,
+  "mean_processing_seconds": 9.26884,
+  "median_processing_seconds": 8.51815,
+  "p95_processing_seconds": 12.0736,
+  "extraction_methods": {
+    "rules": 1,
+    "ollama": 4
+  },
+  "per_document": [
+    {
+      "filename": "invoice_001.csv",
+      "status": "success",
+      "seconds": 12.0736,
+      "method": "rules",
+      "errors": [],
+      "warnings": [],
+      "page_or_sheet_count": 1,
+      "kind": "spreadsheet"
+    },
+    {
+      "filename": "invoice_002.csv",
+      "status": "success",
+      "seconds": 8.51516,
+      "method": "ollama",
+      "errors": [],
+      "warnings": [],
+      "page_or_sheet_count": 1,
+      "kind": "spreadsheet"
+    },
+    {
+      "filename": "invoice_003.csv",
+      "status": "success",
+      "seconds": 8.95766,
+      "method": "ollama",
+      "errors": [],
+      "warnings": [],
+      "page_or_sheet_count": 1,
+      "kind": "spreadsheet"
+    },
+    {
+      "filename": "invoice_004.csv",
+      "status": "success",
+      "seconds": 8.27964,
+      "method": "ollama",
+      "errors": [],
+      "warnings": [],
+      "page_or_sheet_count": 1,
+      "kind": "spreadsheet"
+    },
+    {
+      "filename": "invoice_005.csv",
+      "status": "success",
+      "seconds": 8.51815,
+      "method": "ollama",
+      "errors": [],
+      "warnings": [],
+      "page_or_sheet_count": 1,
+      "kind": "spreadsheet"
+    }
+  ]
+}

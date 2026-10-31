@@ -1,0 +1,312 @@
+{
+  "dataset": "evaluation/multiformat_ground_truth.json",
+  "environment": {
+    "python": "3.13.18",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.41"
+  },
+  "notice": "Controlled synthetic test pack. Clean and degraded inputs are reported separately; expected invalid-input rejections are not counted as valid-document failures.",
+  "clean_samples": {
+    "dataset_size": 7,
+    "document_success_count": 7,
+    "document_failure_count": 0,
+    "document_success_rate": 1.0,
+    "document_failure_rate": 0.0,
+    "overall_field_exact_match_accuracy": 1.0,
+    "field_accuracy": {
+      "invoice_number": 1.0,
+      "invoice_date": 1.0,
+      "supplier_name": 1.0,
+      "customer_name": 1.0,
+      "subtotal": 1.0,
+      "tax": 1.0,
+      "total": 1.0,
+      "currency": 1.0
+    },
+    "line_item_examples_evaluated": 7,
+    "line_item_exact_match_rate": 1.0,
+    "validation_arithmetic_clean_rate": 1.0,
+    "mean_processing_seconds": 10.12147,
+    "median_processing_seconds": 9.68426,
+    "p95_processing_seconds": 12.11664,
+    "extraction_methods": {
+      "rules": 1,
+      "ollama": 6
+    },
+    "per_document": [
+      {
+        "filename": "01_invoice_csv.csv",
+        "status": "success",
+        "seconds": 12.11664,
+        "method": "rules",
+        "kind": "spreadsheet",
+        "page_or_sheet_count": 1,
+        "field_matches": {
+          "invoice_number": true,
+          "invoice_date": true,
+          "supplier_name": true,
+          "customer_name": true,
+          "subtotal": true,
+          "tax": true,
+          "total": true,
+          "currency": true
+        },
+        "line_item_exact_match": true,
+        "validation_errors": [],
+        "validation_warnings": []
+      },
+      {
+        "filename": "02_invoice_multi_sheet.xlsx",
+        "status": "success",
+        "seconds": 8.8452,
+        "method": "ollama",
+        "kind": "spreadsheet",
+        "page_or_sheet_count": 2,
+        "field_matches": {
+          "invoice_number": true,
+          "invoice_date": true,
+          "supplier_name": true,
+          "customer_name": true,
+          "subtotal": true,
+          "tax": true,
+          "total": true,
+          "currency": true
+        },
+        "line_item_exact_match": true,
+        "validation_errors": [],
+        "validation_warnings": []
+      },
+      {
+        "filename": "03_invoice_legacy_xls.xls",
+        "status": "success",
+        "seconds": 8.27683,
+        "method": "ollama",
+        "kind": "spreadsheet",
+        "page_or_sheet_count": 1,
+        "field_matches": {
+          "invoice_number": true,
+          "invoice_date": true,
+          "supplier_name": true,
+          "customer_name": true,
+          "subtotal": true,
+          "tax": true,
+          "total": true,
+          "currency": true
+        },
+        "line_item_exact_match": true,
+        "validation_errors": [],
+        "validation_warnings": []
+      },
+      {
+        "filename": "04_invoice_photo.jpg",
+        "status": "success",
+        "seconds": 9.53874,
+        "method": "ollama",
+        "kind": "image",
+        "page_or_sheet_count": 1,
+        "field_matches": {
+          "invoice_number": true,
+          "invoice_date": true,
+          "supplier_name": true,
+          "customer_name": true,
+          "subtotal": true,
+          "tax": true,
+          "total": true,
+          "currency": true
+        },
+        "line_item_exact_match": true,
+        "validation_errors": [],
+        "validation_warnings": []
+      },
+      {
+        "filename": "05_invoice_photo.tiff",
+        "status": "success",
+        "seconds": 10.30239,
+        "method": "ollama",
+        "kind": "image",
+        "page_or_sheet_count": 1,
+        "field_matches": {
+          "invoice_number": true,
+          "invoice_date": true,
+          "supplier_name": true,
+          "customer_name": true,
+          "subtotal": true,
+          "tax": true,
+          "total": true,
+          "currency": true
+        },
+        "line_item_exact_match": true,
+        "validation_errors": [],
+        "validation_warnings": []
+      },
+      {
+        "filename": "06_invoice_two_page_digital.pdf",
+        "status": "success",
+        "seconds": 9.68426,
+        "method": "ollama",
+        "kind": "pdf",
+        "page_or_sheet_count": 2,
+        "field_matches": {
+          "invoice_number": true,
+          "invoice_date": true,
+          "supplier_name": true,
+          "customer_name": true,
+          "subtotal": true,
+          "tax": true,
+          "total": true,
+          "currency": true
+        },
+        "line_item_exact_match": true,
+        "validation_errors": [],
+        "validation_warnings": []
+      },
+      {
+        "filename": "07_invoice_two_page_scanned.pdf",
+        "status": "success",
+        "seconds": 12.08625,
+        "method": "ollama",
+        "kind": "pdf",
+        "page_or_sheet_count": 2,
+        "field_matches": {
+          "invoice_number": true,
+          "invoice_date": true,
+          "supplier_name": true,
+          "customer_name": true,
+          "subtotal": true,
+          "tax": true,
+          "total": true,
+          "currency": true
+        },
+        "line_item_exact_match": true,
+        "validation_errors": [],
+        "validation_warnings": []
+      }
+    ]
+  },
+  "degraded_samples": {
+    "dataset_size": 2,
+    "document_success_count": 2,
+    "document_failure_count": 0,
+    "document_success_rate": 1.0,
+    "document_failure_rate": 0.0,
+    "overall_field_exact_match_accuracy": 0.8125,
+    "field_accuracy": {
+      "invoice_number": 1.0,
+      "invoice_date": 1.0,
+      "supplier_name": 1.0,
+      "customer_name": 1.0,
+      "subtotal": 0.5,
+      "tax": 1.0,
+      "total": 1.0,
+      "currency": 0.0
+    },
+    "line_item_examples_evaluated": 2,
+    "line_item_exact_match_rate": 1.0,
+    "validation_arithmetic_clean_rate": 1.0,
+    "mean_processing_seconds": 9.67642,
+    "median_processing_seconds": 9.67642,
+    "p95_processing_seconds": 9.79511,
+    "extraction_methods": {
+      "ollama": 2
+    },
+    "per_document": [
+      {
+        "filename": "08_poor_quality_scan.png",
+        "status": "success",
+        "seconds": 9.79511,
+        "method": "ollama",
+        "kind": "image",
+        "page_or_sheet_count": 1,
+        "field_matches": {
+          "invoice_number": true,
+          "invoice_date": true,
+          "supplier_name": true,
+          "customer_name": true,
+          "subtotal": true,
+          "tax": true,
+          "total": true,
+          "currency": false
+        },
+        "line_item_exact_match": true,
+        "validation_errors": [],
+        "validation_warnings": [
+          {
+            "code": "unsupported_currency",
+            "field": "currency",
+            "message": "Currency code 'BOT' is not recognized; verify it against the source document."
+          }
+        ]
+      },
+      {
+        "filename": "09_poor_quality_scanned.pdf",
+        "status": "success",
+        "seconds": 9.55773,
+        "method": "ollama",
+        "kind": "pdf",
+        "page_or_sheet_count": 1,
+        "field_matches": {
+          "invoice_number": true,
+          "invoice_date": true,
+          "supplier_name": true,
+          "customer_name": true,
+          "subtotal": false,
+          "tax": true,
+          "total": true,
+          "currency": false
+        },
+        "line_item_exact_match": true,
+        "validation_errors": [],
+        "validation_warnings": [
+          {
+            "code": "missing_field",
+            "field": "subtotal",
+            "message": "Field 'subtotal' was not confidently extracted; manual review may be needed."
+          },
+          {
+            "code": "unsupported_currency",
+            "field": "currency",
+            "message": "Currency code 'BOT' is not recognized; verify it against the source document."
+          },
+          {
+            "code": "partial_financial_breakdown",
+            "field": "subtotal",
+            "message": "Total is present but subtotal or tax is missing, so arithmetic could not be fully verified."
+          }
+        ]
+      }
+    ]
+  },
+  "expected_rejections": {
+    "case_count": 3,
+    "safe_rejection_count": 3,
+    "safe_rejection_rate": 1.0,
+    "per_document": [
+      {
+        "filename": "10_corrupted.pdf",
+        "expected_rejection": true,
+        "rejected_as_expected": true,
+        "status": "rejected_as_expected",
+        "seconds": 0.03412,
+        "error_type": "DocumentProcessingError",
+        "error": "PDF could not be read: FileDataError"
+      },
+      {
+        "filename": "11_corrupted.jpg",
+        "expected_rejection": true,
+        "rejected_as_expected": true,
+        "status": "rejected_as_expected",
+        "seconds": 0.06773,
+        "error_type": "DocumentProcessingError",
+        "error": "Image is corrupted or is not a supported image"
+      },
+      {
+        "filename": "12_unsupported.txt",
+        "expected_rejection": true,
+        "rejected_as_expected": true,
+        "status": "rejected_as_expected",
+        "seconds": 3e-05,
+        "error_type": "DocumentProcessingError",
+        "error": "Unsupported file extension: .txt"
+      }
+    ]
+  }
+}

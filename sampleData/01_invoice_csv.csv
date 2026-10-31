@@ -1,0 +1,2 @@
+Invoice Number,Invoice Date,Supplier Name,Customer Name,Subtotal,Tax,Total,Currency,Description,Quantity,Unit Price,Amount
+INV-CSV-201,2026-10-01,CSV Test Supplies,Example Buyer Ltd,100.00,15.00,115.00,BDT,USB cables,2,50.00,100.00

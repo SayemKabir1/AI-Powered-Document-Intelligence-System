@@ -1,0 +1,2 @@
+Invoice Number,Invoice Date,Supplier Name,Customer Name,Subtotal,Tax,Total,Currency,Description,Quantity,Unit Price,Amount
+INV-100,2026-01-15,Northwind Traders,Example Client,100.0,15.0,115.0,USD,Consulting services,2.0,50.0,100.0

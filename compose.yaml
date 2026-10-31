@@ -1,0 +1,84 @@
+name: ai-document-intelligence-dev
+
+x-dev-environment: &dev_environment
+  APP_ENV: development
+  DEMO_MODE: ${DEMO_MODE:-true}
+  DATABASE_URL: sqlite:///./document_intelligence.db
+  STORAGE_DIR: ./storage
+  CORS_ORIGINS: http://localhost:5173
+
+  # Ollama AI configuration
+  OLLAMA_ENABLED: ${OLLAMA_ENABLED:-false}
+  OLLAMA_BASE_URL: http://ollama:11434
+  OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen2.5:3b}
+  OLLAMA_EMBEDDING_MODEL: ${OLLAMA_EMBEDDING_MODEL:-nomic-embed-text}
+  OLLAMA_TIMEOUT_SECONDS: ${OLLAMA_TIMEOUT_SECONDS:-60}
+
+  WORKER_LEASE_TIMEOUT_SECONDS: 120
+  WORKER_HEARTBEAT_SECONDS: 30
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    env_file:
+      - path: ./backend/.env
+        required: false
+    environment: *dev_environment
+    ports:
+      - "127.0.0.1:${BACKEND_HOST_PORT:-8000}:8000"
+    volumes:
+      - ./backend:/app
+      - ./evaluation:/evaluation
+    stop_grace_period: 180s
+    command:
+      - uvicorn
+      - app.main:app
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8000"
+      - --reload
+
+  worker:
+    stop_grace_period: 180s
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    env_file:
+      - path: ./backend/.env
+        required: false
+    environment: *dev_environment
+    volumes:
+      - ./backend:/app
+      - ./evaluation:/evaluation
+    command: ["python", "-m", "app.worker"]
+    depends_on:
+      - backend
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    environment:
+      VITE_API_PROXY_TARGET: http://backend:8000
+      VITE_DEMO_MODE: ${DEMO_MODE:-true}
+      VITE_DEV_HOST: 0.0.0.0
+    ports:
+      - "127.0.0.1:${FRONTEND_HOST_PORT:-5173}:5173"
+    volumes:
+      - ./frontend:/app
+      - frontend_node_modules:/app/node_modules
+    depends_on:
+      - backend
+
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    volumes:
+      - ollama_data:/root/.ollama
+
+volumes:
+  frontend_node_modules:
+  ollama_data:

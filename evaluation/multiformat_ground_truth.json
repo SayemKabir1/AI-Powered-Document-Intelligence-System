@@ -1,0 +1,20 @@
+{
+  "clean_samples": [
+    {"filename":"01_invoice_csv.csv","fields":{"invoice_number":"INV-CSV-201","invoice_date":"2026-10-01","supplier_name":"CSV Test Supplies","customer_name":"Example Buyer Ltd","subtotal":100.0,"tax":15.0,"total":115.0,"currency":"BDT"},"line_item":{"description":"USB cables","quantity":2.0,"unit_price":50.0,"amount":100.0}},
+    {"filename":"02_invoice_multi_sheet.xlsx","fields":{"invoice_number":"INV-XLSX-202","invoice_date":"2026-10-02","supplier_name":"XLSX Test Supplies","customer_name":"Example Buyer Ltd","subtotal":240.0,"tax":36.0,"total":276.0,"currency":"BDT"},"line_item":{"description":"Wireless mouse","quantity":3.0,"unit_price":80.0,"amount":240.0}},
+    {"filename":"03_invoice_legacy_xls.xls","fields":{"invoice_number":"INV-XLS-203","invoice_date":"2026-10-03","supplier_name":"Legacy Excel Supplies","customer_name":"Example Buyer Ltd","subtotal":50.0,"tax":7.5,"total":57.5,"currency":"BDT"},"line_item":{"description":"HDMI adapter","quantity":1.0,"unit_price":50.0,"amount":50.0}},
+    {"filename":"04_invoice_photo.jpg","fields":{"invoice_number":"INV-JPG-310","invoice_date":"2026-10-04","supplier_name":"JPG Test Supplies","customer_name":"Example Buyer Ltd","subtotal":320.0,"tax":48.0,"total":368.0,"currency":"BDT"},"line_item":{"description":"Keyboard","quantity":4.0,"unit_price":80.0,"amount":320.0}},
+    {"filename":"05_invoice_photo.tiff","fields":{"invoice_number":"INV-TIFF-410","invoice_date":"2026-10-05","supplier_name":"TIFF Test Supplies","customer_name":"Example Buyer Ltd","subtotal":125.0,"tax":18.75,"total":143.75,"currency":"BDT"},"line_item":{"description":"Notebook","quantity":5.0,"unit_price":25.0,"amount":125.0}},
+    {"filename":"06_invoice_two_page_digital.pdf","fields":{"invoice_number":"INV-PDF-MULTI-204","invoice_date":"2026-10-07","supplier_name":"MultiPage PDF Supplies","customer_name":"Example Buyer Ltd","subtotal":500.0,"tax":75.0,"total":575.0,"currency":"BDT"},"line_item":{"description":"Network switch","quantity":2.0,"unit_price":250.0,"amount":500.0}},
+    {"filename":"07_invoice_two_page_scanned.pdf","fields":{"invoice_number":"INV-SCAN-MULTI-205","invoice_date":"2026-10-08","supplier_name":"Scanned MultiPage Supplies","customer_name":"Example Buyer Ltd","subtotal":640.0,"tax":96.0,"total":736.0,"currency":"BDT"},"line_item":{"description":"Ethernet cables","quantity":8.0,"unit_price":80.0,"amount":640.0}}
+  ],
+  "degraded_samples": [
+    {"filename":"08_poor_quality_scan.png","fields":{"invoice_number":"INV-LOW-206","invoice_date":"2026-10-06","supplier_name":"Low Quality Supplies","customer_name":"Example Buyer Ltd","subtotal":70.0,"tax":10.5,"total":80.5,"currency":"BDT"},"line_item":{"description":"Pens","quantity":7.0,"unit_price":10.0,"amount":70.0}},
+    {"filename":"09_poor_quality_scanned.pdf","fields":{"invoice_number":"INV-LOW-206","invoice_date":"2026-10-06","supplier_name":"Low Quality Supplies","customer_name":"Example Buyer Ltd","subtotal":70.0,"tax":10.5,"total":80.5,"currency":"BDT"},"line_item":{"description":"Pens","quantity":7.0,"unit_price":10.0,"amount":70.0}}
+  ],
+  "expected_rejections": [
+    {"filename":"10_corrupted.pdf","reason":"Corrupted PDF should raise a controlled processing error"},
+    {"filename":"11_corrupted.jpg","reason":"Corrupted JPG should raise a controlled processing error"},
+    {"filename":"12_unsupported.txt","reason":"Unsupported extension should be rejected by the processor"}
+  ]
+}
