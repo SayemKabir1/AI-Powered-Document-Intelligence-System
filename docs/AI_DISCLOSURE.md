@@ -16,3 +16,21 @@ No paid inference service is required The Ollama-backed inference and embedding 
 ## Human review and responsible use
 
 This system is a review aid, not an autonomous accounting or payment approval system. Extracted fields may be wrong or incomplete. Review validation errors and warnings, confirm important figures against the original document, and manually approve high-impact decisions. The small synthetic dataset in `evaluation/` is for reproducibility only and does not demonstrate production accuracy.
+
+# AI-Assisted Development Disclosure
+
+AI tools were used as development assistants during the implementation of the AI-Powered Document Intelligence System.
+
+The development process involved a combination of personal technical work, independent decision-making, testing, debugging, and AI-assisted support.
+
+AI assistance was primarily used for:
+
+- **Technical guidance:** Exploring implementation approaches, software architecture, and technology choices.
+- **Code assistance:** Reviewing code, suggesting improvements, and helping implement selected features.
+- **Debugging and troubleshooting:** Investigating errors, identifying potential issues, and suggesting possible solutions.
+- **Testing support:** Developing test scenarios, reviewing test coverage, and analyzing test results.
+- **Documentation:** Improving technical explanations, project documentation, and setup instructions.
+
+The project architecture, integration decisions, implementation, local execution, testing, and verification were carried out through an iterative development process with human review and validation.
+
+AI-generated suggestions were reviewed and tested before being incorporated into the project. AI tools were used to support development, not as a replacement for the developer's understanding, decisions, or responsibility for the final implementation.
