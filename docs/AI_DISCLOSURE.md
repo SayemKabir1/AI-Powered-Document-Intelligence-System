@@ -1,36 +1,53 @@
-# AI-assisted development and model disclosure
+# AI-Assisted Development and Model Disclosure
 
-## Development disclosure
+## 1. Development Disclosure
 
-This project was developed with AI assistance for architecture planning, code drafting, test generation, documentation and security-review prompts. The resulting source code and tests were executed in the available Linux workspace. This disclosure does not imply that all generated code is correct or that the system is production-ready; the limitations documented in the README, evaluation report and security assessment remain applicable.
+The AI-Powered Document Intelligence System was developed through an iterative process involving independent technical work, problem-solving, implementation, testing, debugging, and AI-assisted development.
 
-## Runtime AI design
+AI tools were used as development assistants in several areas:
 
-- **Optional local LLM:** Ollama with a configurable model (default `qwen2.5:3b`) may extract invoice fields from document text using a JSON-schema-constrained response.
-- **Fallback:** If Ollama is disabled, unavailable or fails, a rules-based parser extracts fields from explicit labels and leaves values it cannot confidently identify as `null`.
-- **Optional embeddings:** Ollama with `nomic-embed-text` may generate local vectors for semantic or hybrid search. If embeddings are unavailable, search falls back to keyword search and reports that mode.
-- **Non-generative processing:** PDF text extraction, OCR, spreadsheet parsing, database persistence and arithmetic checks use deterministic tools/rules rather than an LLM.
+- **Technical guidance:** Exploring software architecture, technology choices, and possible implementation approaches.
+- **Code assistance:** Reviewing code, suggesting improvements, and assisting with selected implementation tasks.
+- **Debugging and troubleshooting:** Investigating errors, identifying potential issues, and exploring possible solutions.
+- **Testing support:** Designing test scenarios, reviewing test coverage, and analyzing test results.
+- **Documentation:** Improving technical explanations, setup instructions, and project documentation.
+- **Security review:** Identifying potential vulnerabilities and reviewing security-related implementation decisions.
 
-No paid inference service is required The Ollama-backed inference and embedding paths must be verified on the machine used for theby the implementation. Local inference still uses the computer's CPU/GPU and memory. The saved evaluation results record Ollama-backed extraction for four of five CSV samples and six of seven clean multi-format samples. This verifies those recorded extraction runs, but does not guarantee that Ollama or the configured models will be available on another machine. The embedding workflow should be demonstrated only when it has been verified on the demonstration environment.
+The overall architecture, technical integration, implementation decisions, local execution, testing, and verification were carried out through an iterative development process with human review and validation.
 
-## Human review and responsible use
+AI-generated suggestions were reviewed and tested before being incorporated into the project. The developer remains responsible for the final source code, implementation decisions, and project functionality.
 
-This system is a review aid, not an autonomous accounting or payment approval system. Extracted fields may be wrong or incomplete. Review validation errors and warnings, confirm important figures against the original document, and manually approve high-impact decisions. The small synthetic dataset in `evaluation/` is for reproducibility only and does not demonstrate production accuracy.
+## 2. Runtime AI Design
 
-# AI-Assisted Development Disclosure
+The application uses a combination of local AI capabilities and deterministic processing.
 
-AI tools were used as development assistants during the implementation of the AI-Powered Document Intelligence System.
+- **Optional local LLM:** Ollama with a configurable model (default `qwen2.5:3b`) can extract invoice fields from document text using a JSON-schema-constrained response.
+- **Fallback processing:** If Ollama is disabled, unavailable, or fails, a rules-based parser extracts information from explicit labels. Values that cannot be confidently identified are left as `null`.
+- **Optional embeddings:** Ollama with `nomic-embed-text` can generate local vectors for semantic or hybrid search. If embeddings are unavailable, search falls back to keyword search and reports the search mode used.
+- **Non-generative processing:** PDF text extraction, OCR, spreadsheet parsing, database persistence, and arithmetic validation use deterministic tools and rules rather than an LLM.
 
-The development process involved a combination of personal technical work, independent decision-making, testing, debugging, and AI-assisted support.
+The implementation does not require a paid inference service. Local inference uses the computer's available CPU, GPU, and memory.
 
-AI assistance was primarily used for:
+The saved evaluation results record Ollama-backed extraction for four of five CSV samples and six of seven clean multi-format samples. These results demonstrate the recorded extraction runs but do not guarantee that Ollama or the configured models will be available on another machine.
 
-- **Technical guidance:** Exploring implementation approaches, software architecture, and technology choices.
-- **Code assistance:** Reviewing code, suggesting improvements, and helping implement selected features.
-- **Debugging and troubleshooting:** Investigating errors, identifying potential issues, and suggesting possible solutions.
-- **Testing support:** Developing test scenarios, reviewing test coverage, and analyzing test results.
-- **Documentation:** Improving technical explanations, project documentation, and setup instructions.
+The embedding workflow should only be demonstrated when it has been verified in the demonstration environment.
 
-The project architecture, integration decisions, implementation, local execution, testing, and verification were carried out through an iterative development process with human review and validation.
+## 3. Examples of AI-Assisted Development Tasks
 
-AI-generated suggestions were reviewed and tested before being incorporated into the project. AI tools were used to support development, not as a replacement for the developer's understanding, decisions, or responsibility for the final implementation.
+The following are representative examples of how AI assistance was used during development. They are paraphrased examples, not a complete record of the original prompts.
+
+- Exploring an architecture for an AI-powered document processing and invoice extraction system using locally available tools.
+- Reviewing extraction logic and identifying potential issues with invoice fields and line items.
+- Suggesting test scenarios for financial validation, incorrect values, and document-processing failures.
+- Reviewing application code for potential security vulnerabilities and recommending improvements.
+- Investigating automated test failures and suggesting regression tests for corrected functionality.
+
+## 4. Human Review and Responsible Use
+
+This system is a document extraction and review aid, not an autonomous accounting or payment approval system.
+
+Extracted information may be incorrect or incomplete. Users should review validation errors and warnings, verify important figures against the original documents, and manually approve high-impact decisions.
+
+The evaluation dataset consists of controlled synthetic examples intended for reproducibility. Its results should not be interpreted as proof of production-level accuracy or reliability.
+
+The developer is responsible for reviewing, maintaining, and verifying the final implementation.
